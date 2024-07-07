@@ -19,7 +19,7 @@ if($ENV{ROS_VERSION} EQUAL 1)
   find_package(catkin REQUIRED COMPONENTS
     roscpp
     sensor_msgs
-    livox_ros_driver
+    livox_ros_driver2
   )
   catkin_package()
 

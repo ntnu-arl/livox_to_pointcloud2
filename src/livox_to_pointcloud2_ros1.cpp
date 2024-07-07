@@ -2,7 +2,7 @@
 
 #include <ros/ros.h>
 #include <sensor_msgs/PointCloud2.h>
-#include <livox_ros_driver/CustomMsg.h>
+#include <livox_ros_driver2/CustomMsg.h>
 
 #define ROS1
 #include <livox_to_pointcloud2/livox_converter.hpp>
@@ -16,7 +16,7 @@ public:
     points_sub = nh.subscribe("/livox/lidar", 10, &LivoxToPointCloud2::callback, this);
   }
 
-  void callback(const livox_ros_driver::CustomMsg::ConstPtr& livox_msg) {
+  void callback(const livox_ros_driver2::CustomMsg::ConstPtr& livox_msg) {
     const auto points_msg = converter.convert(*livox_msg);
     points_pub.publish(points_msg);
   }
